@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import Achievements from "./pages/Achievements";
+import AchievementDetail from "./pages/AchievementDetail";
 import Research from "./pages/Research";
 import News from "./pages/News";
 import Alumni from "./pages/Alumni";
@@ -28,6 +29,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/achievements" element={<Achievements />} />
+              <Route path="/achievements/:id" element={<AchievementDetail />} />
               <Route path="/research" element={<Research />} />
               <Route path="/news" element={<News />} />
               <Route path="/alumni" element={<Alumni />} />
