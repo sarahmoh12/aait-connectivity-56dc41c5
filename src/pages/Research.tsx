@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Search, Clock, CheckCircle, AlertCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Mock data - replace with actual data later
 const researches = [
@@ -14,6 +15,17 @@ const researches = [
     abstract: "A study on integrating renewable energy sources into Ethiopia's power grid",
     image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80",
     date: "2024",
+    fullDescription: `This comprehensive research focuses on the integration of renewable energy sources into Ethiopia's existing power grid infrastructure. The study examines the technical, economic, and social implications of large-scale renewable energy adoption.
+
+Key Findings:
+- Potential for 70% renewable energy integration by 2030
+- Cost-benefit analysis of different integration strategies
+- Impact on rural electrification
+- Technical challenges and proposed solutions`,
+    methodology: "Mixed-methods approach combining quantitative grid analysis with qualitative stakeholder interviews",
+    impact: "The findings could help Ethiopia achieve its renewable energy goals while ensuring grid stability",
+    funding: "Ethiopian Electric Power Corporation",
+    publications: ["IEEE Power Systems Journal", "Renewable Energy Quarterly"]
   },
   {
     id: 2,
@@ -112,7 +124,8 @@ const Research = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredResearch.map((research) => (
-            <div
+            <Link
+              to={`/research/${research.id}`}
               key={research.id}
               className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-all duration-300"
             >
@@ -138,7 +151,7 @@ const Research = () => {
                   <p>{research.date}</p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
