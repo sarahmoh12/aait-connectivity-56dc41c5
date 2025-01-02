@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Search, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Mock data - replace with actual data later
 const news = [
@@ -57,7 +58,8 @@ const News = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredNews.map((item) => (
-            <div
+            <Link
+              to={`/news/${item.id}`}
               key={item.id}
               className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-all duration-300"
             >
@@ -76,7 +78,7 @@ const News = () => {
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm">{item.description}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

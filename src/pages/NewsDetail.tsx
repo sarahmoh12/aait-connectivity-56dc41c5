@@ -89,16 +89,18 @@ const NewsDetail = () => {
 
             <div className="prose max-w-none">
               <p className="text-gray-700 mb-6">{newsItem.description}</p>
-              <p className="whitespace-pre-line mb-6">{newsItem.fullDescription}</p>
+              <p className="whitespace-pre-line">{newsItem.fullDescription}</p>
 
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h2 className="text-xl font-semibold mb-3">Event Details</h2>
-                <div className="space-y-2">
-                  <p><strong>Venue:</strong> {newsItem.venue}</p>
-                  <p><strong>Organizer:</strong> {newsItem.organizer}</p>
-                  <p><strong>Contact:</strong> {newsItem.contact}</p>
+              {newsItem.venue && (
+                <div className="bg-gray-50 p-6 rounded-lg mt-6">
+                  <h2 className="text-xl font-semibold mb-3">Event Details</h2>
+                  <div className="space-y-2">
+                    <p><strong>Venue:</strong> {newsItem.venue}</p>
+                    <p><strong>Organizer:</strong> {newsItem.organizer}</p>
+                    <p><strong>Contact:</strong> {newsItem.contact}</p>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>

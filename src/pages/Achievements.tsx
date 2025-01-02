@@ -30,7 +30,6 @@ const achievements = [
     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80",
     date: "2023",
   },
-  // Add more achievements as needed
 ];
 
 const categories = [
